@@ -54,7 +54,7 @@ public class LinkRepositoryTest {
 
         linkRepository.incrementClickCountByOne(SHORT_URL);
 
-        Link updated = this.entityManager.persistFlushFind(linkRepository.findOne(SHORT_URL));
+        Link updated = this.entityManager.persistFlushFind(linkRepository.findByShortUrl(SHORT_URL));
         assertThat(updated.getClickCount()).isEqualTo(2);
     }
 }

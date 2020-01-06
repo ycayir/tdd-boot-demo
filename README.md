@@ -37,12 +37,12 @@ ALTER TABLE link ADD click_count INT
 
 Create new user:
 ```
-create user 'linkservice'@'localhost' identified by 'linkservice';
+CREATE USER 'linkservice'@'localhost' IDENTIFIED BY 'linkservice';
 ```
 
 Give all privileges to the new user on the newly created database:
 ```
-grant all privileges on urls to 'linkservice'@'localhost';
+GRANT SELECT, INSERT, UPDATE, DELETE ON `urls`.* TO `linkservice`@`localhost`
 ```
 
 Don't forget to flush ;)
